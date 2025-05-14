@@ -1,0 +1,21 @@
+CREATE TABLE Books (
+	Book_id SERIAL PRIMARY KEY,
+	Title VARCHAR(50) NOT NULL UNIQUE,
+	Author VARCHAR(50) NOT NULL,
+	Genre VARCHAR(20),
+	Price DECIMAL(10,2),
+	Stock_quantity INT
+);
+CREATE TABLE Customers(
+	Customer_id SERIAL PRIMARY KEY,
+	First_name VARCHAR(20) NOT NULL,
+	Last_name VARCHAR(20) NOT NULL,
+	Email VARCHAR(25) NOT NULL UNIQUE,
+	Phone VARCHAR(10)
+);
+CREATE TABLE Orders(
+	Order_id SERIAL PRIMARY KEY,
+	Customer_id INT,
+	Order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	Amount DECIMAL(5,2)
+);
